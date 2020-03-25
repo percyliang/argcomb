@@ -7,7 +7,7 @@ with open("README.md", "r") as f:
 setuptools.setup(
     name="argcomb",
     #packages=["argcomb"],
-    version="1.0",
+    version="1.0.0",
     license="MIT",
     description="A simple library for building command-line arguments",
     long_description=long_description,
