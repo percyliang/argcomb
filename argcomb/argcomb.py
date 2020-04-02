@@ -205,7 +205,9 @@ class ArgCombiner(object):
                 if self.pretend:
                     print(command)
                 else:
-                    exitcode = os.system(command)
+                    raw_exitcode = os.system(command)
+                    # See https://stackoverflow.com/questions/55014222/what-are-response-codes-for-256-and-512-for-os-system-in-python-scripting
+                    exitcode = raw_exitcode >> 8
                     if exitcode != 0:
                         sys.exit(exitcode)
         except ArgcombException as e:
